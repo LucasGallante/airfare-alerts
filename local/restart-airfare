@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo docker rm -f airfare_exporter
+sudo docker build -t airfare_exporter ../exporter
+sudo docker run -d --network host --name airfare_exporter airfare_exporter
