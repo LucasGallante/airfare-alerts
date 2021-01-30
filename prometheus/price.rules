@@ -1,0 +1,10 @@
+groups:
+- name: production
+  rules:
+  - alert: GRU-EZE
+    expr: quotes{destination="Buenos Aires", origin="São Paulo"} < 1000
+    labels: 
+      origin: GRU
+      destination: EZE
+    annotations:
+      description: "Essa passagem tem um alerta para o preço de R$1000. O preço atual é: {{ $value }}R$."
